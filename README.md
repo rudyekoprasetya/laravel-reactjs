@@ -4,15 +4,19 @@
 1. Setelah Clone Jalankan, masuk ke Project
 `$ composer install`
 `$ npm install`
+
+2. copy dan rename **.env.example** menjad **.env** dan lakukan penyesuaian konifgurasi database semisal **laravel-react**
+
+3. lakukan migrate database
 `$ php artisan migrate`
 
-2. Untuk menjalankan server
+4. Untuk menjalankan server
 `$ php artisan serve`
 
-3. untuk recompile reactjs
+5. untuk recompile reactjs
 `$ npm run dev`
 
-4. Folder Coding ReactJS ada di **resources/js/component**
+6. Folder Coding ReactJS ada di **resources/js/component**
 
 
 ### Persiapan
