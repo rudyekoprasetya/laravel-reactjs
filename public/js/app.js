@@ -2156,7 +2156,7 @@ var Content = function Content() {
 
   var restServer = function restServer() {
     axios__WEBPACK_IMPORTED_MODULE_2___default().get('http://127.0.0.1:8000/api/pengurus').then(function (response) {
-      console.log(response.data);
+      // console.log(response.data);
       setData(response.data);
     });
   };
@@ -2172,22 +2172,22 @@ var Content = function Content() {
     restServer();
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    "class": "container",
+    className: "container",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      "class": "card",
+      className: "card",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        "class": "card-header text-white bg-primary",
+        className: "card-header text-white bg-primary",
         children: "Data Pengurus"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        "class": "card-body",
+        className: "card-body",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          "class": "btn btn-success",
+          className: "btn btn-success",
           to: "/add",
           children: "Tambah Data"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-          "class": "table-responsive mt-4",
+          className: "table-responsive mt-4",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("table", {
-            "class": "table table-stripped",
+            className: "table table-stripped",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("thead", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("tr", {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("th", {
@@ -2219,12 +2219,14 @@ var Content = function Content() {
                     children: val.gaji
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("td", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                      "class": "btn btn-small btn-warning",
-                      to: "/edit/:id",
+                      className: "btn btn-small btn-warning",
+                      to: '/edit/' + val.id,
                       children: "Edit"
                     }), " | ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
-                      "class": "btn btn-small btn-danger",
-                      onClick: delData(val.id),
+                      className: "btn btn-small btn-danger",
+                      onClick: function onClick() {
+                        return delData(val.id);
+                      },
                       children: "Hapus"
                     })]
                   })]

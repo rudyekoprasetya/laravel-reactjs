@@ -11,7 +11,7 @@ const Content = () => {
   const restServer = () => {
     axios.get('http://127.0.0.1:8000/api/pengurus')
       .then(response=> {
-          console.log(response.data);
+          // console.log(response.data);
           setData(response.data);
       })
   }
@@ -27,17 +27,17 @@ const Content = () => {
   useEffect(() => {
     restServer();
     }, [])
-  
+
   return (
-    <div class="container">
-      <div class="card">
-        <div class="card-header text-white bg-primary">
+    <div className="container">
+      <div className="card">
+        <div className="card-header text-white bg-primary">
           Data Pengurus
         </div>
-        <div class="card-body">
-          <Link class="btn btn-success" to="/add">Tambah Data</Link>
-          <div class="table-responsive mt-4">
-            <table class="table table-stripped">
+        <div className="card-body">
+          <Link className="btn btn-success" to="/add">Tambah Data</Link>
+          <div className="table-responsive mt-4">
+            <table className="table table-stripped">
               <thead>
                 <tr>
                   <th>ID</th>
@@ -57,7 +57,7 @@ const Content = () => {
                   <td>{val.alamat}</td>
                   <td>{val.gender}</td>
                   <td>{val.gaji}</td>
-                  <td><Link class="btn btn-small btn-warning" to="/edit/:id">Edit</Link> | <button class="btn btn-small btn-danger" onClick={delData(val.id)}>Hapus</button></td>
+                  <td><Link className="btn btn-small btn-warning" to={'/edit/' + val.id}>Edit</Link> | <button className="btn btn-small btn-danger" onClick={() => delData(val.id)}>Hapus</button></td>
                 </tr>
                 )) }
 
@@ -68,7 +68,7 @@ const Content = () => {
       </div>
     </div>
     )
-  
+
 }
 
 export default Content
